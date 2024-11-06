@@ -1,0 +1,23 @@
+version: "3.5"
+
+services:
+  diun:
+    image: crazymax/diun:latest
+    command: serve
+    volumes:
+      - "/home/akiro/docker/diun/data:/data"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    environment:
+      - "TZ=Europe/Minsk"
+      - "DIUN_WATCH_WORKERS=20"
+      - "DIUN_WATCH_SCHEDULE=0 */6 * * *"
+      - "DIUN_WATCH_JITTER=30s"
+      - "DIUN_WATCH_RUNONSTARTUP=true"
+      - "DIUN_PROVIDERS_DOCKER=true"
+      - "DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT=true"
+      - "DIUN_NOTIF_TELEGRAM_TOKEN=8063597487:AAFu-flEjgds2mKukmdjCUq8iFanXhkoFSc"
+      - "DIUN_NOTIF_TELEGRAM_chatIDs=7165651580"
+
+    labels:
+      - "diun.enable=true"
+    restart: always
