@@ -1,0 +1,13 @@
+services:
+  glances:
+    image: nicolargo/glances:latest
+    container_name: glances
+    restart: always
+    ports:
+      - "61208-61209:61208-61209"  # Expose ports 61208 and 61209
+    environment:
+      - GLANCES_OPT=-w             # Set the environment variable for Glances options
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro    # Mount Docker socket (read-only)
+      - /run/user/1000/podman/podman.sock:/run/user/1000/podman/podman.sock:ro # Mount Podman socket (read-only)
+    pid: "host"  

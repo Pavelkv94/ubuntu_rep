@@ -1,0 +1,14 @@
+version: '3'
+services:
+  filebrowser:
+    image: filebrowser/filebrowser:latest
+    container_name: filebrowser
+    volumes:
+      - /home/akiro/docker/filesystem/files:/srv #Change to match your directory
+      - /home/akiro/docker/filesystem/filebrowser.db:/database/filebrowser.db #Change to match your directory
+      - /home/akiro/docker/filesystem/settings.json:/config/settings.json #Change to match your directory
+    environment:
+      - PUID=1000
+      - PGID=1000
+    ports:
+      - 8094:80

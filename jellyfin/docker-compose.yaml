@@ -1,0 +1,16 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    network_mode: 'host'
+    volumes:
+      - /home/akiro/docker/jellyfin/config:/config
+      - /home/akiro/docker/jellyfin/cache:/cache
+      - /home/akiro/docker/jellyfin/media:/media
+      - type: bind
+        source: ./media
+        target: /media
+        read_only: true
+    ports: #You will need to uncomment if you aren't running app through a proxy
+      - 8096:8096
+    restart: 'unless-stopped'

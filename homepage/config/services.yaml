@@ -1,0 +1,83 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services
+
+- Metrics:
+    - Glances:
+        icon: glances.png
+        href: "{{HOMEPAGE_VAR_GLANCES_URL}}"
+        description: Monitoring system for home server.
+        widget:
+          type: glances
+          url: "{{HOMEPAGE_VAR_GLANCES_URL}}"
+          version: 4 # required only if running glances v4 or higher, defaults to 3
+          metric: cpu
+          diskUnits: bytes # optional, bytes (default) or bbytes. Only applies to disk
+          refreshInterval: 5000 # optional - in milliseconds, defaults to 1000 or more, depending on the metric
+          pointsLimit: 15 # o
+    - Memory Usage:
+        widget:
+          type: glances
+          url: "{{HOMEPAGE_VAR_GLANCES_URL}}"
+          version: 4
+          metric: memory
+    - Network Usage:
+        widget:
+          type: glances
+          url: "{{HOMEPAGE_VAR_GLANCES_URL}}"
+          version: 4
+          metric: network:eth0
+    - Tasks:
+        widget:
+          type: glances
+          url: "{{HOMEPAGE_VAR_GLANCES_URL}}"
+          version: 4
+          metric: process
+    - CPU Temperature:
+        widget:
+          type: glances
+          url: "{{HOMEPAGE_VAR_GLANCES_URL}}"
+          version: 4
+          metric: sensor:Package id 0
+- Services:
+    - Portainer:
+        icon: docker.png
+        href: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+        description: My portainer GUI
+        widget:
+          type: portainer
+          url: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+          env: 2
+          key: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+    - Uptime Kuma:
+        icon: uptime-kuma.svg
+        href: "{{HOMEPAGE_VAR_UPTIME_KUMA_URL}}"
+        description: A self-hosted monitoring tool.
+        widget:
+          type: uptimekuma
+          url: "{{HOMEPAGE_VAR_UPTIME_KUMA_URL}}"
+          slug: "{{HOMEPAGE_VAR_UPTIME_KUMA_SLUG}}"
+
+- Media:
+    - Jellyfin:
+        icon: jellyfin.svg
+        href: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
+        description: Home mediaserver.
+        widget:
+          type: jellyfin
+          url: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
+          key: "{{HOMEPAGE_VAR_JELLYFIN_KEY}}"
+          enableBlocks: true # optional, defaults to false
+          enableNowPlaying: true # optional, defaults to true
+          enableUser: true # optional, defaults to false
+          showEpisodeNumber: true # optional, defaults to false
+          expandOneStreamToTwoRows: false # optional, defaults to true
+    - FileBrowser:
+        icon: filebrowser.png
+        href: "{{HOMEPAGE_VAR_FILEBROWSER_URL}}"
+        description: Files.
+
+- My Third2 Group:
+    - My Third2 Service:
+        href: http://localhost/
+        description: Homepage2 is 😎

@@ -1,0 +1,21 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    environment:
+      PUID: $PUID # optional, your user id
+      PGID: $PGID # optional, your group id
+      HOMEPAGE_VAR_PORTAINER_URL: $PORTAINER_URL
+      HOMEPAGE_VAR_PORTAINER_KEY: $PORTAINER_KEY
+      HOMEPAGE_VAR_GLANCES_URL: $GLANCES_URL
+      HOMEPAGE_VAR_UPTIME_KUMA_URL: $UPTIME_KUMA_URL
+      HOMEPAGE_VAR_UPTIME_KUMA_SLUG: $UPTIME_KUMA_SLUG
+      HOMEPAGE_VAR_JELLYFIN_URL: $JELLYFIN_URL
+      HOMEPAGE_VAR_JELLYFIN_KEY: $JELLYFIN_KEY
+      HOMEPAGE_VAR_FILEBROWSER_URL: $FILEBROWSER_URL
+    ports:
+      - 3000:3000
+    volumes:
+      - /home/akiro/docker/homepage/config:/app/config # Make sure your local config directory exists
+      - /var/run/docker.sock:/var/run/docker.sock:ro # optional, for docker integrations
+    restart: unless-stopped
