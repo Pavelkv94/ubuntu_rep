@@ -2,6 +2,8 @@ services:
   glances:
     image: nicolargo/glances:latest
     container_name: glances
+    networks:
+      - x_network
     restart: always
     ports:
       - "61208-61209:61208-61209"  # Expose ports 61208 and 61209
@@ -11,3 +13,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro    # Mount Docker socket (read-only)
       - /run/user/1000/podman/podman.sock:/run/user/1000/podman/podman.sock:ro # Mount Podman socket (read-only)
     pid: "host"  
+
+networks:
+  x_network:
+    external: true

@@ -48,7 +48,7 @@
           type: portainer
           url: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
           env: 2
-          key: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+          key: "{{HOMEPAGE_VAR_PORTAINER_KEY}}"
     - Uptime Kuma:
         icon: uptime-kuma.svg
         href: "{{HOMEPAGE_VAR_UPTIME_KUMA_URL}}"
@@ -57,6 +57,11 @@
           type: uptimekuma
           url: "{{HOMEPAGE_VAR_UPTIME_KUMA_URL}}"
           slug: "{{HOMEPAGE_VAR_UPTIME_KUMA_SLUG}}"
+    - MongoDB:
+        icon: mongodb.png
+        href: "{{HOMEPAGE_VAR_MONGODB_EXPRESS_URL}}"
+        description: MongoDB document databases provide high availability and easy scalability.
+
 
 - Media:
     - Jellyfin:
@@ -72,10 +77,16 @@
           enableUser: true # optional, defaults to false
           showEpisodeNumber: true # optional, defaults to false
           expandOneStreamToTwoRows: false # optional, defaults to true
-    - FileBrowser:
-        icon: filebrowser.png
-        href: "{{HOMEPAGE_VAR_FILEBROWSER_URL}}"
-        description: Files.
+    - Navidrome:
+        icon: navidrome.png
+        href: "{{HOMEPAGE_VAR_NAVIDROME_URL}}"
+        description: Navidrome is an open source web-based music collection server and streamer.
+        widget:
+          type: navidrome
+          url: "{{HOMEPAGE_VAR_NAVIDROME_URL}}"
+          user: akiro
+          token: 57caebd1be638a0b3c1ef4ce286c15ba
+          salt: randomsalt
 
 - My Third2 Group:
     - My Third2 Service:

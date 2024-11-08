@@ -3,7 +3,8 @@ services:
     image: deluan/navidrome:latest
     container_name: navidrome
     hostname: navidrome
-
+    networks:
+      - x_network
     ports:
       - 4533:4533
     restart: unless-stopped
@@ -11,8 +12,12 @@ services:
       ND_SCANSCHEDULE: 1h
       ND_LOGLEVEL: info  
       ND_BASEURL: ""
-      ND_LASTFM_SECRET: "11111111111111111"
-      ND_LASTFM_APIKEY: "11111111111111111"
+      ND_LASTFM_SECRET: "123"
+      ND_LASTFM_APIKEY: "123"
     volumes:
       - "/home/akiro/docker/navidrome/data:/data"
       - "/home/akiro/docker/navidrome/music:/music:ro"
+
+networks:
+  x_network:
+    external: true
