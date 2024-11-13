@@ -1,0 +1,37 @@
+networks:
+  gitea:
+    external: false
+
+services:
+  server:
+    image: gitea/gitea:1.22.3
+    container_name: gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    networks:
+      - gitea
+    volumes:
+      - /home/akiro/docker/gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "3010:3000"
+      - "222:22"
+
+  runner:
+    image: gitea/act_runner:latest
+    environment:
+      CONFIG_FILE: /config.yaml
+      GITEA_INSTANCE_URL: "${INSTANCE_URL}"
+      GITEA_RUNNER_REGISTRATION_TOKEN: "${REGISTRATION_TOKEN}"
+      GITEA_RUNNER_NAME: "Gitea Runner"
+    depends_on:
+      - server
+    networks:
+      - gitea
+    volumes:
+      - /home/akiro/docker/gitea-runner/config.yaml:/config.yaml
+      - /home/akiro/docker/gitea-runner/data:/data
+      - /var/run/docker.sock:/var/run/docker.sock

@@ -57,11 +57,15 @@
           type: uptimekuma
           url: "{{HOMEPAGE_VAR_UPTIME_KUMA_URL}}"
           slug: "{{HOMEPAGE_VAR_UPTIME_KUMA_SLUG}}"
-    - MongoDB:
+    - AdGuard home:
         icon: mongodb.png
-        href: "{{HOMEPAGE_VAR_MONGODB_EXPRESS_URL}}"
-        description: MongoDB document databases provide high availability and easy scalability.
-
+        href: "{{HOMEPAGE_VAR_ADGUARD_URL}}"
+        description: AdGuard Home is a network-wide software for blocking ads & tracking.
+        widget:
+          type: adguard
+          url: "{{HOMEPAGE_VAR_ADGUARD_URL}}"
+          username: "{{HOMEPAGE_VAR_ADGUARD_USER}}"
+          password: "{{HOMEPAGE_VAR_ADGUARD_PASS}}"
 
 - Media:
     - Jellyfin:
@@ -88,7 +92,8 @@
           token: 57caebd1be638a0b3c1ef4ce286c15ba
           salt: randomsalt
 
-- My Third2 Group:
-    - My Third2 Service:
-        href: http://localhost/
-        description: Homepage2 is 😎
+- Databases:
+    - MongoDB:
+        icon: mongodb.png
+        href: "{{HOMEPAGE_VAR_MONGODB_EXPRESS_URL}}"
+        description: MongoDB document databases provide high availability and easy scalability.
