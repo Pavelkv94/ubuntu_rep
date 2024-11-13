@@ -17,8 +17,8 @@ services:
       - "DIUN_WATCH_RUNONSTARTUP=true"
       - "DIUN_PROVIDERS_DOCKER=true"
       - "DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT=true"
-      - "DIUN_NOTIF_TELEGRAM_TOKEN=8063597487:AAFu-flEjgds2mKukmdjCUq8iFanXhkoFSc"
-      - "DIUN_NOTIF_TELEGRAM_chatIDs=7165651580"
+      - "DIUN_NOTIF_TELEGRAM_TOKEN=123"
+      - "DIUN_NOTIF_TELEGRAM_chatIDs=123"
 
     labels:
       - "diun.enable=true"
