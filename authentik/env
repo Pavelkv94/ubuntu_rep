@@ -1,2 +1,16 @@
-PG_PASS=strong_pg_password
-AUTHENTIK_SECRET_KEY=a_strong_secret_key
+PG_PASS=VFxqWpulUqJ/oHIlQAMIZ2+bdjhW8eCwl3Y9cxStdznzQkuU
+AUTHENTIK_SECRET_KEY=H5P1AYerxU+c5QZbPatzrZMwIhchYZloNQ3GgHs5gphLL4GUoZBEc33ZyxntB6ZIh7V/kVRkqXtGf5hT
+
+# SMTP Host Emails are sent to
+AUTHENTIK_EMAIL__HOST=smtp.gmail.com
+AUTHENTIK_EMAIL__PORT=587
+# Optionally authenticate (don't add quotation marks to your password)
+AUTHENTIK_EMAIL__USERNAME=uykrop@gmail.com
+AUTHENTIK_EMAIL__PASSWORD=1111 1111 1111 1111
+# Use StartTLS
+AUTHENTIK_EMAIL__USE_TLS=false
+# Use SSL
+AUTHENTIK_EMAIL__USE_SSL=false
+AUTHENTIK_EMAIL__TIMEOUT=10
+# Email address authentik will send from, should have a correct @domain
+AUTHENTIK_EMAIL__FROM=authentik@localhost
