@@ -1,0 +1,16 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-reverse-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /home/akiro/docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /etc/ssl:/etc/ssl
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

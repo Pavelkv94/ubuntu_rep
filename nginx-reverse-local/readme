@@ -1,0 +1,13 @@
+1. using self-signed certificates for https
+2. Not resolved https apps issues
+
+Self-Signed Certificates
+
+``
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key -out /etc/ssl/certs/selfsigned.crt
+``
+
+For local should add to etc/hosts 
+``
+<REMOTE_SERVER_PUBLIC_IP> gitea.xwing.pn glances.xwing.pn portainer.xwing.pn uptime.xwing.pn adguard.xwing.pn navidrome.xwing.pn mongo.xwing.pn postgres.xwing.pn nextcloud.xwing.pn
+``
