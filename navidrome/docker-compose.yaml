@@ -12,8 +12,10 @@ services:
       ND_SCANSCHEDULE: 1h
       ND_LOGLEVEL: info  
       ND_BASEURL: ""
-      ND_LASTFM_SECRET: "123"
-      ND_LASTFM_APIKEY: "123"
+      ND_LASTFM_SECRET: $LASTFM_SECRET
+      ND_LASTFM_APIKEY: $LASTFM_APIKEY
+      ND_SPOTIFY_ID: $SPOTIFY_ID
+      ND_SPOTIFY_SECRET: $SPOTIFY_SECRET
     volumes:
       - "/home/akiro/docker/navidrome/data:/data"
       - "/home/akiro/docker/navidrome/music:/music:ro"
