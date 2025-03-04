@@ -43,8 +43,8 @@ name: The Big List of Hacked Malware Web Sites
 url: https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt
 name: NoCoin Filter List
 
-url: https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt
-name: Online Malicious URL Blocklist
+url: https://raw.githubusercontent.com/ph00lt0/blocklist/master/blocklist.txt
+name: ph00lt0
 
 url: https://easylist.to/easylist/easylist.txt
 name: easylist
