@@ -84,6 +84,10 @@
         icon: postgres.png
         href: "{{HOMEPAGE_VAR_PGADMIN_URL}}"
         description: PostgreSQL Tools.
+    - Neo4j:
+        icon: neo4j.png
+        href: "{{HOMEPAGE_VAR_NEO4J_URL}}"
+        description: Neo4j is a graph database management system (GDBMS) developed by Neo4j Inc.
     - CoinMarketCup:
         icon: bitcoin.png
         href: https://coinmarketcap.com/
