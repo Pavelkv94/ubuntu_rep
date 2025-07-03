@@ -1,0 +1,7 @@
+services:
+  mongoclient:
+    image: mongoclient/mongoclient
+    container_name: mongoclient
+    ports:
+      - "8085:3000"
+    restart: always
