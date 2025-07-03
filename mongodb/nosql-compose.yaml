@@ -2,6 +2,12 @@ services:
   mongoclient:
     image: mongoclient/mongoclient
     container_name: mongoclient
+    networks:
+      - mongo_network
     ports:
       - "8085:3000"
     restart: always
+
+networks:
+  mongo_network:
+    name: mongo_network
