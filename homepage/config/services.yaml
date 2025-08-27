@@ -66,21 +66,6 @@
           url: "{{HOMEPAGE_VAR_ADGUARD_URL}}"
           username: "{{HOMEPAGE_VAR_ADGUARD_USER}}"
           password: "{{HOMEPAGE_VAR_ADGUARD_PASS}}"
-
-- Media:
-    - Jellyfin:
-        icon: jellyfin.svg
-        href: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
-        description: Home mediaserver.
-        widget:
-          type: jellyfin
-          url: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
-          key: "{{HOMEPAGE_VAR_JELLYFIN_KEY}}"
-          enableBlocks: true # optional, defaults to false
-          enableNowPlaying: true # optional, defaults to true
-          enableUser: true # optional, defaults to false
-          showEpisodeNumber: true # optional, defaults to false
-          expandOneStreamToTwoRows: false # optional, defaults to true
     - Navidrome:
         icon: navidrome.png
         href: "{{HOMEPAGE_VAR_NAVIDROME_URL}}"
@@ -91,9 +76,43 @@
           user: akiro
           token: 57caebd1be638a0b3c1ef4ce286c15ba
           salt: randomsalt
-
-- Databases:
     - MongoDB:
         icon: mongodb.png
         href: "{{HOMEPAGE_VAR_MONGODB_EXPRESS_URL}}"
         description: MongoDB document databases provide high availability and easy scalability.
+    - PostgreSQL:
+        icon: postgres.png
+        href: "{{HOMEPAGE_VAR_PGADMIN_URL}}"
+        description: PostgreSQL Tools.
+    - Neo4j:
+        icon: neo4j.png
+        href: "{{HOMEPAGE_VAR_NEO4J_URL}}"
+        description: Neo4j is a graph database management system (GDBMS) developed by Neo4j Inc.
+    - CoinMarketCup:
+        icon: bitcoin.png
+        href: https://coinmarketcap.com/
+        description: Crypto pricing and information.
+        widget:
+          type: coinmarketcap
+          currency: USD # Optional
+          symbols: [BTC, SOL, TRX]
+          key: 3ff74387-0a6e-4e72-8742-d63376601304
+          defaultinterval: 7d # Optional
+    #- Gitea:
+    #    icon: gitea.png
+    #    href: "{{HOMEPAGE_VAR_GITEA_URL}}"
+    #    description: Gitea enables the creation and management of repositories based on Git.
+    #    widget:
+    #      type: gitea
+    #      url: "{{HOMEPAGE_VAR_GITEA_URL}}"
+    #      key: "{{HOMEPAGE_VAR_GITEA_API_TOKEN}}"
+    - Nextcloud:
+        icon: nextcloud.png
+        href: "{{HOMEPAGE_VAR_NEXTCLOUD_URL}}"
+        description: Nextcloud is a suite of client-server software for creating and using file hosting services.
+        widget:
+          type: nextcloud
+          url: "{{HOMEPAGE_VAR_NEXTCLOUD_URL}}"
+          username: "{{HOMEPAGE_VAR_NC_USERNAME}}"
+          password: "{{HOMEPAGE_VAR_NC_TOKEN}}"
+
