@@ -2,6 +2,8 @@ services:
   uptime-kuma:
     image: louislam/uptime-kuma:1
     container_name: uptime-kuma
+    mem_limit: 2g
+    cpus: 2.0
     networks:
       - x_network
     volumes:
