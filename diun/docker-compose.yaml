@@ -2,6 +2,8 @@ services:
   diun:
     image: crazymax/diun:latest
     container_name: diun
+    mem_limit: 256m
+    cpus: 0.5
     networks:
       - x_network
     command: serve
