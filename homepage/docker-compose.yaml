@@ -2,6 +2,8 @@ services:
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage
+    mem_limit: 512m
+    cpus: 0.5
     networks:
       - x_network
     environment:
